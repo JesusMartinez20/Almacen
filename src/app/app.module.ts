@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from "@angular/router";
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+//import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 //Angular Material
@@ -53,16 +56,29 @@ import {MatTreeModule} from '@angular/material/tree';
 
 //Componentes
 import { LoginComponent } from './login/login.component';
+import { CatalogoComponent } from './catalogo/catalogo.component';
+import { ContrasenaComponent } from './contrasena/contrasena.component';
+import { SolicitudesComponent } from './solicitudes/solicitudes.component';
+import { AgregarMaterialComponent } from './agregar-material/agregar-material.component';
 
 //Rutas
 const appRoutes: Routes = [
   {path: "", component: LoginComponent},
+  {path: "catalogo", component: CatalogoComponent},
+  {path: "contrasena", component: ContrasenaComponent},
+  {path: "solicitudes", component: SolicitudesComponent},
+  {path: "agregar", component: AgregarMaterialComponent},
+
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    CatalogoComponent,
+    ContrasenaComponent,
+    SolicitudesComponent,
+    AgregarMaterialComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,6 +128,10 @@ const appRoutes: Routes = [
     PortalModule,
     ScrollingModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule ,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
