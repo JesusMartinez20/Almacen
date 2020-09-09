@@ -1,0 +1,23 @@
+<div style="display: flex;justify-content: center;align-items: center; height: 100%;">
+    <div class="login">
+      <img src="../../assets/logo_ceti.png" width="25%">
+      <h1>Bienvenido al sistema de prestamo de material.</h1>
+      <h1>Ingresa una nueva contrasena</h1>
+      <form class="form" [formGroup]="formGroup" (ngSubmit)="submit()">
+          <mat-form-field class="inputs">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" formControlName="contrasena">
+          </mat-form-field>
+      
+          <mat-form-field class="inputs">
+              <mat-label>Confirmar contraseña</mat-label>
+              <input matInput type="password" formControlName="confirmarContrasena">
+          </mat-form-field>
+          <div class="submit">
+            <button mat-button type="submit">Continuar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+  
+  
