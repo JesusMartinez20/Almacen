@@ -1,0 +1,28 @@
+<header *ngIf="sesion">
+  <div class="headerSpacer" style="justify-content: flex-start;">
+    <button (click)="sideEvent()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div class="headerSpacer" style="justify-content: center">
+    <img routerLink="/catalogo" src="../../assets/logo_ceti.png" height="50px" width="50px"/>
+  </div>
+  <div class="headerSpacer" style="justify-content: flex-end; overflow:hidden;">
+    <button (click)="openDialog()" class="account" mat-button>
+      <div  class="account">
+        <p>{{nombre}}</p>
+        <mat-icon >person</mat-icon>
+      </div>
+    </button>
+  </div>
+</header>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened={{sidenav}}>
+    <button class="sidenavButtons" (click)="nav('catalogo')" mat-button>Material</button>
+    <button class="sidenavButtons" (click)="nav('solicitudes')" mat-button>Solicitudes</button>
+  </mat-sidenav>
+  <mat-sidenav-content style="height: 100vh;">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
