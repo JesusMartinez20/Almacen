@@ -1,0 +1,11 @@
+p{
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+}
+
+button{
+    margin:5px;
+}
