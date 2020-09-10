@@ -66,6 +66,8 @@ import { EditarMaterialComponent } from './editar-material/editar-material.compo
 import { SolicitarComponent } from './solicitar/solicitar.component';
 import { SolicitudComponent } from './solicitud/solicitud.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 //Rutas
 const appRoutes: Routes = [
@@ -144,7 +146,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule ,
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) ,
     
   ],
   providers: [],
