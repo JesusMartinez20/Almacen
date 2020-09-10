@@ -1,0 +1,35 @@
+<div style="display: flex;justify-content: center;align-items: center; height: 100%;">
+    <div class="login">
+        <img src="{{data.imagen}}" width="25%">
+        <h1>{{data.nombre}}</h1>
+        <div class="par">
+            <p>Fecha y hora de entrega: </p>
+            <p>{{data.fecha_entrega | date:'medium'}}</p>
+        </div>
+        
+        <div class="par">
+            <p>Fecha y hora de devolución: </p>
+            <p>{{data.fecha_devolucion | date:'medium'}}</p>
+        </div>
+        
+        <div *ngIf="tipo_cuenta=='admin'" class="botones">
+            <mat-form-field appearance="fill">
+                <mat-label>Estatus</mat-label>
+                <mat-select  [(value)]="selected">
+                    <mat-option value="Pendiente">Pendiente</mat-option>
+                    <mat-option value="Entregado">Entregado</mat-option>
+                    <mat-option value="Devuelto">Devuelto</mat-option>
+                    <mat-option value="Sin devolver">Sin devolver</mat-option>
+                    <mat-option value="Cancelado">Cancelado</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="botones">
+            <button mat-stroked-button (click)="submit()" color="primary">Continuar</button>
+        </div>
+        <div *ngIf="tipo_cuenta=='alumno'" class="botones">
+            <p class="estatus">Estatus: {{data.estatus}}</p>
+        </div>
+    </div>
+</div>
+  
