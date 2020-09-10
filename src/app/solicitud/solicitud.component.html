@@ -24,7 +24,7 @@
                 </mat-select>
             </mat-form-field>
         </div>
-        <div class="botones">
+        <div *ngIf="tipo_cuenta=='admin'" class="botones">
             <button mat-stroked-button (click)="submit()" color="primary">Continuar</button>
         </div>
         <div *ngIf="tipo_cuenta=='alumno'" class="botones">

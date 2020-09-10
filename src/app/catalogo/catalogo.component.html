@@ -5,7 +5,7 @@
 <div>
     <mat-card routerLink="/material/{{d.id}}" *ngFor="let d of data" class="card">
         <div class="imageContainer">
-            <img mat-card-image src="{{d.imagen}}" alt="Foto del material" class="img">
+            <img src="{{d.imagen}}" alt="Foto del material" class="img">
         </div>
         <mat-card-content>
             <p>{{d.nombre}}</p>
