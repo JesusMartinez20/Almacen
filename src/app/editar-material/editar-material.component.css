@@ -1,0 +1,44 @@
+.form{
+    width: 100%;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  .inputs {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  .login{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin-bottom: auto;
+  }  
+  
+  img{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
+
+  h1{
+     margin-top: 20px; 
+     margin-bottom: 20px;
+     text-align: center;
+     width: 70%;
+     margin-left: auto;
+     margin-right: auto;
+  }
+
+  .submit{
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+  }

@@ -1,0 +1,30 @@
+<div style="display: flex;justify-content: center;align-items: center; height: 100%;">
+    <div class="login">
+      <h1>Agregar material</h1>
+      <form class="form" [formGroup]="formGroup" (ngSubmit)="submit()">
+          <mat-form-field class="inputs">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre">
+          </mat-form-field>
+          <br>
+          <mat-form-field class="inputs">
+            <mat-label>Descripcion</mat-label>
+            <input matInput formControlName="descripcion">
+          </mat-form-field>
+          <br>
+          <mat-form-field class="inputs">
+            <mat-label>Imagen</mat-label>
+            <input matInput formControlName="imagen">
+          </mat-form-field>
+          <br>
+          <mat-form-field class="inputs">
+            <mat-label>Cantidad</mat-label>
+            <input type="number" min="1" max="100" matInput formControlName="cantidad">
+          </mat-form-field>
+          <div class="submit">
+            <button  mat-stroked-button type="submit" color="primary">Guardar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+  
