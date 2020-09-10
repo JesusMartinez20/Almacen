@@ -20,13 +20,13 @@ export class RequestService {
   getPosts(URL: String){
     if(localStorage.getItem('token')){
       const headers = new HttpHeaders().append('Authorization', 'bearer '+  localStorage.getItem('token'));
-      let url = 'http://192.168.1.68:3000/';
+      let url = 'https://almacen-backend.herokuapp.com/';
       url += URL;
       return this.posts = this.http.get(url,{headers: headers}).pipe(
         catchError(this.handleError)
         );
     }else{
-      let url = 'http://192.168.1.68:3000/';
+      let url = 'https://almacen-backend.herokuapp.com/';
       url += URL;
       
       console.log(url);
@@ -37,7 +37,7 @@ export class RequestService {
   }
 
   login(username: String, password: String) {
-    let response= this.http.post('http://192.168.1.68:3000/login', 
+    let response= this.http.post('https://almacen-backend.herokuapp.com/login', 
     {
       "id": username,
       "contrasena": password
@@ -52,13 +52,13 @@ export class RequestService {
   postMethod(URL,data){
     if(localStorage.getItem('token')){
     const headers = new HttpHeaders().append('Authorization', 'bearer '+ localStorage.getItem('token'));
-    let url = 'http://192.168.1.68:3000/';
+    let url = 'https://almacen-backend.herokuapp.com/';
     url += URL;
     return this.http.post(url,data,{headers: headers}).pipe(
       catchError(this.handleError)
       );
     } else {
-      let url = 'http://192.168.1.68:3000/';
+      let url = 'https://almacen-backend.herokuapp.com/';
       url += URL;
       return this.http.post(url,data);
     }
@@ -66,7 +66,7 @@ export class RequestService {
 
   putMethod(URL,data){
     const headers = new HttpHeaders().append('Authorization' ,'bearer '+  localStorage.getItem('token'));
-    let url = 'http://192.168.1.68:3000/';
+    let url = 'https://almacen-backend.herokuapp.com/';
     url += URL;
     //data=JSON.stringify(data)
     console.log(data);
@@ -75,7 +75,7 @@ export class RequestService {
 
   deleteMethod(URL,data){
     const headers = new HttpHeaders().append('Authorization' ,'bearer '+  localStorage.getItem('token'));
-    let url = 'http://192.168.1.68:3000/';
+    let url = 'https://almacen-backend.herokuapp.com/';
     url += URL;
     //data=JSON.stringify(data)
     console.log(data);
