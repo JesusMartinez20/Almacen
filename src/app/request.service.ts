@@ -72,5 +72,14 @@ export class RequestService {
     console.log(data);
     return this.http.put(url,data,{headers: headers});
   }
+
+  deleteMethod(URL,data){
+    const headers = new HttpHeaders().append('Authorization' ,'bearer '+  localStorage.getItem('token'));
+    let url = 'http://192.168.1.68:3000/';
+    url += URL;
+    //data=JSON.stringify(data)
+    console.log(data);
+    return this.http.delete(url,{headers: headers});
+  }
 }
 
