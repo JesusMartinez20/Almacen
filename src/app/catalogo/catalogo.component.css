@@ -26,6 +26,13 @@ img{
     width: 280px;
     max-height: 432px;
     max-width: 432px;
-
+    margin-right: auto;
+    margin-left: auto;
     object-fit: contain;
+}
+
+.imageContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

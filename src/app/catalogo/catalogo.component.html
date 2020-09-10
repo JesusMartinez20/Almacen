@@ -1,12 +1,16 @@
+<button routerLink="/agregar" *ngIf="agregar" mat-raised-button color="primary" aria-label="Agregar material" style="width: 100%;">
+    <mat-icon>add</mat-icon>
+    Agregar
+</button>
 <div>
-    <mat-card *ngFor="let d of data" class="card">
-        <img mat-card-image src="{{d.imagen}}" alt="Foto del material">
+    <mat-card routerLink="/material/{{d.id}}" *ngFor="let d of data" class="card">
+        <div class="imageContainer">
+            <img mat-card-image src="{{d.imagen}}" alt="Foto del material" class="img">
+        </div>
         <mat-card-content>
             <p>{{d.nombre}}</p>
             <p>Cantidad disponible: {{d.cantidad}}</p>
         </mat-card-content>
     </mat-card>
 </div>
-<button routerLink="/agregar" *ngIf="agregar" mat-mini-fab color="primary" aria-label="Agregar material">
-    <mat-icon>add</mat-icon>
-</button>
+

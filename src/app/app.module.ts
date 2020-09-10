@@ -54,12 +54,18 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 
+
 //Componentes
 import { LoginComponent } from './login/login.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { ContrasenaComponent } from './contrasena/contrasena.component';
 import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { AgregarMaterialComponent } from './agregar-material/agregar-material.component';
+import { MaterialComponent } from './material/material.component';
+import { EditarMaterialComponent } from './editar-material/editar-material.component';
+import { SolicitarComponent } from './solicitar/solicitar.component';
+import { SolicitudComponent } from './solicitud/solicitud.component';
+import { LogoutComponent } from './logout/logout.component';
 
 //Rutas
 const appRoutes: Routes = [
@@ -68,6 +74,9 @@ const appRoutes: Routes = [
   {path: "contrasena", component: ContrasenaComponent},
   {path: "solicitudes", component: SolicitudesComponent},
   {path: "agregar", component: AgregarMaterialComponent},
+  {path: "material/:id", component: MaterialComponent},
+  {path: "editar/:id", component: EditarMaterialComponent},
+  {path: "solicitud/:id", component: SolicitudComponent},
 
 ];
 
@@ -79,6 +88,11 @@ const appRoutes: Routes = [
     ContrasenaComponent,
     SolicitudesComponent,
     AgregarMaterialComponent,
+    MaterialComponent,
+    EditarMaterialComponent,
+    SolicitarComponent,
+    SolicitudComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

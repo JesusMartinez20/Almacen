@@ -3,6 +3,7 @@ import { RequestService } from './request.service';
 import { Router } from '@angular/router';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -20,7 +21,7 @@ export class AppComponent {
   isMobile=false;
   
   openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+    const dialogRef = this.dialog.open(LogoutComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -67,23 +68,3 @@ export class AppComponent {
   }
 }
 
-@Component({
-  selector: 'sesion',
-  templateUrl: './sesion.html',
-  styleUrls: ['./sesion.css']
-})
-export class DialogContentExampleDialog {
-  constructor(public dialogRef: MatDialogRef<DialogContentExampleDialog>, private router:Router){
-    
-  }
-  onNoClick(){
-    this.dialogRef.close();
-  }
-
-  onClick(){
-    localStorage.clear();
-    this.dialogRef.close();
-    this.router.navigate(["/"]);
-    window.location.reload();
-  }
-}

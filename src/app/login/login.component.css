@@ -6,7 +6,9 @@
   }
   
   .inputs {
-    width: 100%;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
   }
   
   .login{
@@ -22,6 +24,8 @@
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    min-width: 15%;
+    width: 215px;
   }
 
   h1{
@@ -39,4 +43,12 @@
       width: 100%;
       display: flex;
       justify-content: center;
+  }
+
+  @media only screen and (max-width:425px){
+    .inputs {
+      width: 100%;
+      margin-left: 0%;
+      margin-right: 0%;
+    }
   }
