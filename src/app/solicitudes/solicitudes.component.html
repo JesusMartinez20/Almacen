@@ -1,0 +1,116 @@
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Solicitudes pasadas">
+        <table mat-table [dataSource]="solicitudesPasadas" class="mat-elevation-z8">
+            <div *ngIf="cuenta=='admin'">
+                <ng-container matColumnDef="Registro">
+                    <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Registro </th>
+                    <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.id_usuario}} </td>
+                  </ng-container>
+    
+                  <ng-container matColumnDef="Nombre">
+                    <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.alumno}} </td>
+                  </ng-container>
+            </div>
+
+            <ng-container matColumnDef="Equipo">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Equipo </th>
+              <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Fecha de prestamo">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Fecha de prestamo </th>
+              <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.fecha_entrega |date:'medium'}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Fecha de entrega">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Fecha de entrega </th>
+              <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.fecha_devolucion |date:'medium'}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Estatus">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Estatus </th>
+              <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.estatus}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="solicitudesColumnas"></tr>
+            <tr mat-row *matRowDef="let row; columns: solicitudesColumnas;"></tr>
+          </table>
+    </mat-tab>
+    <mat-tab label="Solicitudes activas">
+        <table mat-table [dataSource]="solicitudesActivas" class="mat-elevation-z8">
+            <div *ngIf="cuenta=='admin'">
+                <ng-container matColumnDef="Registro">
+                    <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Registro </th>
+                    <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.id_usuario}} </td>
+                  </ng-container>
+    
+                  <ng-container matColumnDef="Nombre">
+                    <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.alumno}} </td>
+                  </ng-container>
+            </div>
+          
+            <ng-container matColumnDef="Equipo">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Equipo </th>
+              <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Fecha de prestamo">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Fecha de prestamo </th>
+              <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.fecha_entrega |date:'medium'}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Fecha de entrega">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Fecha de entrega </th>
+              <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.fecha_devolucion |date:'medium'}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Estatus">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Estatus </th>
+              <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.estatus}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="solicitudesColumnas"></tr>
+            <tr mat-row *matRowDef="let row; columns: solicitudesColumnas;"></tr>
+          </table>
+    </mat-tab>
+    <mat-tab label="Solicitudes pendientes">
+        <table mat-table [dataSource]="solicitudesPendientes" class="mat-elevation-z8">
+            <div *ngIf="cuenta=='admin'">
+                <ng-container matColumnDef="Registro">
+                    <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Registro </th>
+                    <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.id_usuario}} </td>
+                  </ng-container>
+    
+                  <ng-container matColumnDef="Nombre">
+                    <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.alumno}} </td>
+                  </ng-container>
+            </div>
+          
+            <ng-container matColumnDef="Equipo">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Equipo </th>
+              <td routerLink="/solicitud/{{element.id}}" routerLink="/solicitud/{{element.is}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Fecha de prestamo">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Fecha de prestamo </th>
+              <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.fecha_entrega |date:'medium'}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Fecha de entrega">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Fecha de entrega </th>
+              <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.fecha_devolucion |date:'medium'}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Estatus">
+              <th style="padding: 5px;" mat-header-cell *matHeaderCellDef> Estatus </th>
+              <td routerLink="/solicitud/{{element.id}}" style="padding: 5px;" mat-cell *matCellDef="let element"> {{element.estatus}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="solicitudesColumnas"></tr>
+            <tr mat-row *matRowDef="let row; columns: solicitudesColumnas;"></tr>
+          </table>
+    </mat-tab>
+  </mat-tab-group>

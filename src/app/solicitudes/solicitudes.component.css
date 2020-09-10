@@ -1,0 +1,9 @@
+table {
+    width: 100%;
+  }
+
+td,th{
+    padding: 5px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
