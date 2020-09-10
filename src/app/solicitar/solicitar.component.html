@@ -1,0 +1,14 @@
+<form class="form" [formGroup]="formGroup" (ngSubmit)="submit()">
+    <mat-form-field class="inputs">
+      <mat-label>Fecha de entrega</mat-label>
+      <input matInput type="datetime-local" formControlName="fecha_entrega">
+    </mat-form-field>
+
+    <mat-form-field class="inputs">
+        <mat-label>Fecha de devolución</mat-label>
+        <input matInput type="datetime-local" formControlName="fecha_devolucion">
+    </mat-form-field>
+    <div class="submit">
+      <button mat-stroked-button type="submit" color="primary">Continuar</button>
+    </div>
+</form>
